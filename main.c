@@ -27,8 +27,8 @@ int main()
     printf("Array Init: ");
     printAllData_Array(ptrArray, SIZE);
 
-    int sum = calculateAllDataSum_Array(ptrArray, SIZE);
-    printf("After Summing: %d\n", sum);
+    int sumArr = calculateAllDataSum_Array(ptrArray, SIZE);
+    printf("After Summing: %d\n", sumArr);
     printAllData_Array(ptrArray, SIZE);
 
     printf("------\n");
@@ -37,14 +37,14 @@ int main()
 
 #ifdef Linked_List
     Node* ptrList = NULL;
-    ptrList = (Node*) calloc(SIZE, sizeof(Node));
-    assert(ptrList != NULL);
-
     ptrList = initAllData_List(SIZE);
+    assert(ptrList != NULL);
     printf("List Init: ");
     printAllData_List(ptrList);
 
-
+    int sumList = calculateAllDataSum_List(ptrList);
+    printf("After Summing: %d\n", sumList);
+    printAllData_List(ptrList);
 
     printf("------\n");
     free(ptrList);
