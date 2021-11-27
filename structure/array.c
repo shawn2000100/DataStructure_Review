@@ -1,25 +1,26 @@
 #include <stdio.h>
+#include "array.h"
 
-void initAllData_Array(int** arr, int n)
+void initAllData_Array(int* arr, int n)
 {
-	for (int i = 0; i < n; ++i) {
-		(*arr)[i] = i;
+	for (size_t i = 0; i < n; ++i) {
+		arr[i] = i;
 	}
 }
 
-int calculateAllDataSum_Array(int** arr, int n)
+int calculateAllDataSum_Array(int* arr, int n)
 {
 	int sum = 0;
-	for (int i = 0; i < n; ++i) {
-		sum += (*arr)[i];
+	for (size_t i = 0; i < n; ++i) {
+		sum += arr[i];
 	}
 	return sum;
 }
 
-void printAllData_Array(int** arr, int n)
+void printAllData_Array(int* arr, int n)
 {
-	for (int i = 0; i < n; ++i) {
-		printf("%d ", (*arr)[i]);
+	for (size_t i = 0; i < n; ++i) {
+		printf("%d ", arr[i]);
 	}
 	printf("\n");
 }

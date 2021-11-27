@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-// Data Structure
 #include "./structure/array.h"
+#include "./structure/list.h"
+#define ARRAY
+#define Linked_List
 
 /* 資料結構複習範例:
    0. Array (Warm-Up)
@@ -21,14 +23,14 @@ int main()
     ptrArray = (int*) calloc(SIZE, sizeof(int));
     assert(ptrArray != NULL);
 
-    initAllData_Array(&ptrArray, SIZE);
-    printf("After Init: ");
-    printAllData_Array(&ptrArray, SIZE);
+    initAllData_Array(ptrArray, SIZE);
+    printf("Array Init: ");
+    printAllData_Array(ptrArray, SIZE);
 
-    int sum = calculateAllDataSum_Array(&ptrArray, SIZE);
+    int sum = calculateAllDataSum_Array(ptrArray, SIZE);
     printf("After Summing: %d\n", sum);
-    printAllData_Array(&ptrArray, SIZE);
-
+    printAllData_Array(ptrArray, SIZE);
+    printf("------\n");
     free(ptrArray);
 #endif
 
