@@ -30,13 +30,24 @@ int main()
     int sum = calculateAllDataSum_Array(ptrArray, SIZE);
     printf("After Summing: %d\n", sum);
     printAllData_Array(ptrArray, SIZE);
+
     printf("------\n");
     free(ptrArray);
 #endif
 
 #ifdef Linked_List
+    Node* ptrList = NULL;
+    ptrList = (Node*) calloc(SIZE, sizeof(Node));
+    assert(ptrList != NULL);
+
+    ptrList = initAllData_List(SIZE);
+    printf("List Init: ");
+    printAllData_List(ptrList);
 
 
+
+    printf("------\n");
+    free(ptrList);
 #endif
 
 #ifdef Double_Linked_List
