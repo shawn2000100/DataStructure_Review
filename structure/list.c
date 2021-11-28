@@ -6,7 +6,7 @@
 
 Node* createNode(int val) {
 	Node* temp = NULL;
-	temp = (Node*) calloc(1, sizeof(Node));
+	temp = (Node*) malloc(sizeof(Node));
 	assert(temp != NULL);
 	temp->val = val;
 	temp->next = NULL;
@@ -22,7 +22,7 @@ void insertNode(Node* currentNode, Node* nextNode) {
 
 Node* initAllData_List(int n) {
 	Node* head = NULL;
-	head = (Node*) calloc(1, sizeof(Node));
+	head = (Node*) malloc(sizeof(Node));
 	assert(head != NULL);
 
 	head->val = 100;

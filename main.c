@@ -4,8 +4,10 @@
 #include <assert.h>
 #include "./structure/array.h"
 #include "./structure/list.h"
-#define ARRAY
+#include "./structure/stack.h"
+#define Array
 #define Linked_List
+#define Stack
 
 /* 資料結構複習範例:
    0. Array (Warm-Up)
@@ -18,9 +20,9 @@ int main()
 {
     const int SIZE = 10;
 
-#ifdef ARRAY
+#ifdef Array
     int* ptrArray = NULL;
-    ptrArray = (int*) calloc(SIZE, sizeof(int));
+    ptrArray = (int*) malloc(SIZE * sizeof(int));
     assert(ptrArray != NULL);
 
     initAllData_Array(ptrArray, SIZE);
@@ -54,7 +56,19 @@ int main()
 #endif
 
 #ifdef Stack
+    Stack_t* ptrStack = NULL;
+    ptrStack = (Stack_t*) malloc(sizeof(Stack_t));
+    assert(ptrStack != NULL);
+    ptrStack->top = NULL;
+    ptrStack->size = 0;
 
+    initAllData_Stack(ptrStack, SIZE);
+    printf("Stack TOP: %d\n", peek(ptrStack));
+    pop(ptrStack);
+    printf("After Pop: %d\n", peek(ptrStack));
+
+    freeAllData_Stack(ptrStack);
+    printf("After Clear Stack: %d\n", peek(ptrStack));
 #endif
 
     printf("------Finish All Data Structure------\n");
