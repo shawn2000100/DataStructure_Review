@@ -9,5 +9,5 @@ Review:
 4. [ ] Hash
 5. [ ] Heap
 6. [ ] Tree
-   - [ ] Binary Tree
+   - [x] Binary Tree
    - [ ] Binary Search Tree 
