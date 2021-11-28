@@ -4,7 +4,10 @@ Review:
 
 0. [x] Array (Warm-Up)
 1. [x] Linked_List
-2. [ ] Stack
+2. [x] Stack
 3. [ ] Queue
 4. [ ] Hash
-5. [ ] Binary Tree
+5. [ ] Heap
+6. [ ] Tree
+   - [ ] Binary Tree
+   - [ ] Binary Search Tree 

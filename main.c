@@ -5,9 +5,12 @@
 #include "./structure/array.h"
 #include "./structure/list.h"
 #include "./structure/stack.h"
+#include "./structure/tree.h"
 #define Array
 #define Linked_List
 #define Stack
+#define BinaryTree
+
 
 /* 資料結構複習範例:
    0. Array (Warm-Up)
@@ -71,7 +74,23 @@ int main()
     printf("After Clear Stack: %d\n", peek(ptrStack));
 #endif
 
+#ifdef BinaryTree
+    BinaryTree_t* ptrTree = NULL;
+    ptrTree = (BinaryTree_t*)malloc(sizeof(BinaryTree_t));
+    ptrTree->root = createTreeNode(100);
+    ptrTree->root->left = createTreeNode(101);
+    ptrTree->root->right = createTreeNode(102);
+    ptrTree->root->left->left = createTreeNode(103);
+    ptrTree->root->left->right = createTreeNode(104);
+    ptrTree->root->right->left = createTreeNode(105);
+    ptrTree->root->right->right = createTreeNode(106);
+
+    printf("Tree PreOrder: ");
+    preOrderTraversal(ptrTree->root);
+    printf("\n");
+
+#endif
+
     printf("------Finish All Data Structure------\n");
     return 0;
-
 }
