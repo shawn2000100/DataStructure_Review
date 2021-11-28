@@ -18,5 +18,11 @@ Node* initAllData_List(int n);
 /* 計算總和 */
 int calculateAllDataSum_List(Node* head);
 
+/* 反轉串列 */
+Node* reverseAllData_List(Node* head);
+
 /* 印出資料 */
 void printAllData_List(Node* head);
+
+/* free 整個 List */
+void freeAllData_list(Node* head);

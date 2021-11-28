@@ -45,12 +45,15 @@ int main()
     int sumList = calculateAllDataSum_List(ptrList);
     printf("After Summing: %d\n", sumList);
     printAllData_List(ptrList);
+    printf("After Reverse: \n");
+    ptrList = reverseAllData_List(ptrList);
+    printAllData_List(ptrList);
 
     printf("------\n");
-    free(ptrList);
+    freeAllData_list(ptrList);
 #endif
 
-#ifdef Double_Linked_List
+#ifdef Stack
 
 #endif
 

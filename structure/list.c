@@ -32,7 +32,7 @@ Node* initAllData_List(int n) {
 	Node* ptrCurrent = head;
 	for (size_t i = 1; i < n; ++i) {
 		Node* newNode = NULL;
-		newNode = createNode(i + 100);
+		newNode = createNode((int) i + 100);
 		insertNode(ptrCurrent, newNode);
 
 		assert(ptrCurrent != NULL);
@@ -53,6 +53,22 @@ int calculateAllDataSum_List(Node* head) {
 	return sum;
 }
 
+Node* reverseAllData_List(Node* head) {
+	assert(head != NULL);
+
+	Node* prev = NULL;
+	Node* curr = head;
+	Node* next = NULL;
+	while (curr != NULL) {
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+	}
+	head = prev;
+	return head;
+}
+
 void printAllData_List(Node* head) 
 {
 	assert(head != NULL);
@@ -63,4 +79,12 @@ void printAllData_List(Node* head)
 		ptrCurrent = ptrCurrent->next;
 	}
 	printf("\n");
+}
+
+void freeAllData_list(Node* head) {
+	while (head != NULL) {
+		Node* ptrCurrent = head;
+		head = head->next;
+		free(ptrCurrent);
+	}
 }

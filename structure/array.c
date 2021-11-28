@@ -4,7 +4,7 @@
 void initAllData_Array(int* arr, int n)
 {
 	for (size_t i = 0; i < n; ++i) {
-		arr[i] = i + 100;
+		arr[i] = (int) i + 100;
 	}
 }
 
