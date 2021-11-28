@@ -24,9 +24,22 @@ void preOrderTraversal(TreeNode_t* root) {
 
 /* LDR ¤¤§Ç°lÂÜ */
 void inOrderTraversal(TreeNode_t* root){
+	if (root == NULL) {
+		return;
+	}
+
+	preOrderTraversal(root->left);
+	printf("%d ", root->val);
+	preOrderTraversal(root->right);
 }
 
 /* LRD «á§Ç°lÂÜ */
 void postOrderTraversal(TreeNode_t* root) {
+	if (root == NULL) {
+		return;
+	}
 
+	preOrderTraversal(root->left);
+	preOrderTraversal(root->right);
+	printf("%d ", root->val);
 }

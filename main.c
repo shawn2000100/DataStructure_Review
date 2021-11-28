@@ -36,8 +36,8 @@ int main()
     printf("After Summing: %d\n", sumArr);
     printAllData_Array(ptrArray, SIZE);
 
-    printf("------\n");
     free(ptrArray);
+    printf("------\n");
 #endif
 
 #ifdef Linked_List
@@ -54,8 +54,8 @@ int main()
     ptrList = reverseAllData_List(ptrList);
     printAllData_List(ptrList);
 
-    printf("------\n");
     freeAllData_list(ptrList);
+    printf("------\n");
 #endif
 
 #ifdef Stack
@@ -72,6 +72,7 @@ int main()
 
     freeAllData_Stack(ptrStack);
     printf("After Clear Stack: %d\n", peek(ptrStack));
+    printf("------\n");
 #endif
 
 #ifdef BinaryTree
@@ -89,6 +90,13 @@ int main()
     preOrderTraversal(ptrTree->root);
     printf("\n");
 
+    printf("Tree InOrder: ");
+    inOrderTraversal(ptrTree->root);
+    printf("\n");
+
+    printf("Tree PostOrder: ");
+    postOrderTraversal(ptrTree->root);
+    printf("\n");
 #endif
 
     printf("------Finish All Data Structure------\n");
