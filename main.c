@@ -5,20 +5,16 @@
 #include "./structure/array.h"
 #include "./structure/list.h"
 #include "./structure/stack.h"
+#include "./structure/heap.h"
 #include "./structure/tree.h"
 #define Array
 #define Linked_List
 #define Stack
+#define Heap
 #define BinaryTree
+#define BinarySearchTree
 
 
-/* 資料結構複習範例:
-   0. Array (Warm-Up)
-   1. Linked_List
-   2. Double_Linked_List
-   3. Hash
-   4. Binary Tree
-*/
 int main()
 {
     const int SIZE = 10;
@@ -73,6 +69,31 @@ int main()
     freeAllData_Stack(ptrStack);
     printf("After Clear Stack: %d\n", peek(ptrStack));
     printf("------\n");
+#endif
+
+#ifdef Heap
+    HeapArray_t* heapArray = NULL;
+    heapArray = (HeapArray_t*)malloc(sizeof(HeapArray_t));
+    assert(heapArray != NULL);
+    heapArray->size = 6;
+    heapArray->arr = (int*)malloc(heapArray->size * sizeof(int));
+    assert(heapArray->arr != NULL);
+
+    int testArr[6] = {3, 9, 2, 1, 4, 5};
+    //for (int i = 0; i < heapArray->size; ++i) {
+    //    int inputVal = i;
+    //    //printf("請輸入數字：");
+    //    //scanf("%d", &inputVal);
+    //    heapArray->arr[i] = inputVal;
+    //}
+    memcpy(heapArray->arr, testArr, sizeof(testArr));
+    printAllData_Array(heapArray->arr, heapArray->size);
+    for (int i = heapArray->size / 2 - 1; i >= 0; --i) {
+        heapifyMinArray(heapArray->arr, heapArray->size, i);
+    }
+    printAllData_Array(heapArray->arr, heapArray->size);
+
+
 #endif
 
 #ifdef BinaryTree
